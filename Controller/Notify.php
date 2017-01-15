@@ -23,7 +23,7 @@ class Notify extends BaseController
 			foreach($obter_notificacoes AS $notificationInfo){
 				
 				
-				if($notificationInfo['event_name'] == "task.update"){
+				if(($notificationInfo['event_name'] == "task.update") OR ($notificationInfo['event_name'] == "task.close") OR ($notificationInfo['event_name'] == "task.create")){
 					
 					$notify_description = $notificationInfo['event_data']['task']['title'];
 					
